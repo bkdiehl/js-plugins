@@ -1,0 +1,16 @@
+{
+	"presets": [
+	  ["env", {
+		"targets": {
+			"browsers": ["last 2 versions", "ie >= 10"],
+			"uglify": false		
+		},
+		 "modules": false
+	  }]
+	],
+	"ignore": [
+		"*.scss",
+		"node_modules/**"
+	],
+	"plugins": ["external-helpers"]
+ }

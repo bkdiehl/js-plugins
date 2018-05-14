@@ -1,0 +1,71 @@
+$accordion-selector-color:#076B40;
+$accordion-icon-size: 12px;
+$accordion-icon-width: 3px;
+
+
+.accordion {
+	list-style: none;
+	padding:0;
+	margin:0;
+	/* Whatever the sibling element of an accordion trigger may be, if it's not active, make sure it doesn't have a margin */
+	[data-level]:not(.active)+* {
+		margin: 0;
+	}
+
+	//each selector
+	[data-level] {
+		display: block;
+		padding: 8px 15px;
+		padding-right: 15px + $accordion-icon-size;
+		background: $accordion-selector-color;
+		color:#fff;
+		margin-bottom: 2px;
+		transition: .1s ease-in-out background;
+		font-weight: 700;
+		font-size: 16px;
+		position:relative;		
+
+		&:before, &:after {
+			content:'';
+			position: absolute;
+			right: 15px;
+			top:50%;
+			transform: translateY(-50%);		
+			background: #fff;
+			width: $accordion-icon-size;
+			height: $accordion-icon-width;
+		}
+
+		&:after {
+			transform: rotate(90deg) translateY(-50%);
+			transform-origin: 50% 0;
+			transition: .3s ease-in-out transform;
+		}
+
+		&:hover {
+			cursor: pointer;
+			text-decoration: none;
+		}
+
+		&.active {
+			&:after {
+				transform: rotate(0) translateY(-50%);
+			}
+		}
+
+		&:hover, &.active {
+			background: darken($accordion-selector-color, 10%);			
+		}
+
+		// sibling selector upsets the sibling height calculated by javascript
+		// & + * {
+		// 	img {
+		// 		margin:15px 0;
+		// 	}
+		// }
+	}
+
+	img {
+		margin: 15px 0;
+	}
+}

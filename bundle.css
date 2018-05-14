@@ -1,0 +1,44 @@
+.accordion {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* Whatever the sibling element of an accordion trigger may be, if it's not active, make sure it doesn't have a margin */ }
+  .accordion [data-level]:not(.active) + * {
+    margin: 0; }
+  .accordion [data-level] {
+    display: block;
+    padding: 8px 15px;
+    padding-right: 27px;
+    background: #076B40;
+    color: #fff;
+    margin-bottom: 2px;
+    transition: .1s ease-in-out background;
+    font-weight: 700;
+    font-size: 16px;
+    position: relative; }
+    .accordion [data-level]:before, .accordion [data-level]:after {
+      content: '';
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      background: #fff;
+      width: 12px;
+      height: 3px; }
+    .accordion [data-level]:after {
+      -webkit-transform: rotate(90deg) translateY(-50%);
+              transform: rotate(90deg) translateY(-50%);
+      -webkit-transform-origin: 50% 0;
+              transform-origin: 50% 0;
+      transition: .3s ease-in-out transform; }
+    .accordion [data-level]:hover {
+      cursor: pointer;
+      text-decoration: none; }
+    .accordion [data-level].active:after {
+      -webkit-transform: rotate(0) translateY(-50%);
+              transform: rotate(0) translateY(-50%); }
+    .accordion [data-level]:hover, .accordion [data-level].active {
+      background: #043b23; }
+  .accordion img {
+    margin: 15px 0; }

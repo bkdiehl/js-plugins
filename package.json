@@ -1,0 +1,27 @@
+{
+  "name": "libraries",
+  "version": "1.0.0",
+  "description": "a collection of libraries made by Briant Diehl",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+	 "dev": "rollup -c -w",
+	 "devTest": "rollup src/main.js src/main2.js -f cjs --dir dist --experimentalCodeSplitting --experimentalDynamicImport"
+  },
+  "author": "Briant Diehl",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^8.5.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.7.0",
+    "postcss": "^6.0.22",
+    "rollup-plugin-babel": "^3.0.4",
+    "rollup-plugin-collect-sass": "^1.0.9",
+    "rollup-plugin-livereload": "^0.6.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-sass": "^0.6.1",
+    "rollup-plugin-serve": "^0.4.2"
+  }
+}
