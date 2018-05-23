@@ -50,9 +50,10 @@ var Accordion = function () {
 		this.transitionTime = transitionTime;
 		this.transitionType = transitionType;
 		this.transitionEnd; // class variable for timer
+		this.elements;
 
 		this.accordion.forEach(function (accordion) {
-			var elements = selectors.reduce(function (obj, selector, index) {
+			_this.elements = selectors.reduce(function (obj, selector, index) {
 
 				//obj with keys of index
 				//property value is an array of elements with a css class equal to the selector			
@@ -81,10 +82,10 @@ var Accordion = function () {
 					//add event listener for each selector in the accordion
 					item.addEventListener('click', function (e) {
 						var targetLvl = e.target.dataset.level;
-						elements[targetLvl].forEach(function (item) {
+						_this.elements[targetLvl].forEach(function (item) {
 							return item == e.target ? _this.toggle(item) : _this.close(item);
 						});
-						_this.setHeight(elements);
+						_this.setHeight();
 						_this.isInViewport(e.target);
 					});
 				});
@@ -129,13 +130,13 @@ var Accordion = function () {
 		}
 	}, {
 		key: 'setHeight',
-		value: function setHeight(elements) {
+		value: function setHeight() {
 			var _this3 = this;
 
-			var layerCount = Object.keys(elements).length;
+			var layerCount = Object.keys(this.elements).length;
 			//set the height for each layer of the accordion starting at the inner most layer
 			for (var i = layerCount - 1; i >= 0; i--) {
-				elements[i].forEach(function (elem) {
+				this.elements[i].forEach(function (elem) {
 					var sib = elem.nextElementSibling;
 
 					//only change the height from 0 if it's the active accordion element

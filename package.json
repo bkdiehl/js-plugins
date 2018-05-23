@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
-	 "dev": "rollup -c -w",
-	 "devTest": "rollup src/main.js src/main2.js -f cjs --dir dist --experimentalCodeSplitting --experimentalDynamicImport"
+    "dev": "rollup -c -w",
+    "devTest": "rollup src/main.js src/main2.js -f cjs --dir dist --experimentalCodeSplitting --experimentalDynamicImport"
   },
   "author": "Briant Diehl",
   "license": "ISC",
