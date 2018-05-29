@@ -5,6 +5,8 @@
   /* Whatever the sibling element of an accordion trigger may be, if it's not active, make sure it doesn't have a margin */ }
   .accordion [data-level]:not(.active) + * {
     margin: 0; }
+  .accordion [data-level] + * {
+    padding: 0 15px; }
   .accordion [data-level] {
     display: block;
     padding: 8px 15px;

@@ -1,4 +1,5 @@
 import './scss/accordion.scss';
+import 'core-js/modules/es6.array.from';
 
 class Accordion {
 	//
@@ -101,7 +102,8 @@ class Accordion {
 			  if (elem.classList.contains(this.activeClass)) {
 				  const clone = sib.cloneNode(true);
 				  clone.style.height = 'auto';
-				  elem.parentNode.appendChild(clone);
+				//   sib.prepend(clone);
+				  elem.parentNode.insertBefore(clone, sib);
 				  sib.style.height = clone.offsetHeight + "px";
 				  clone.parentNode.removeChild(clone);
 			  } else {
@@ -131,7 +133,7 @@ class Accordion {
 		 const sib = elem.nextElementSibling;
 		 sib.style.overflow = 'hidden';
 		 sib.style.height = 0;
-	  sib.style.transition = `${this.transitionTime / 1000}s ${this.transitionType}`;
+	  sib.style.transition = `${this.transitionTime / 1000}s ${this.transitionType} height`;
 	  elem.parentNode.classList.add('accordion-item');
 	}
 };

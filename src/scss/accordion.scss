@@ -12,6 +12,10 @@ $accordion-icon-width: 3px;
 		margin: 0;
 	}
 
+	[data-level]+* {
+		padding:0 15px;
+	}
+
 	//each selector
 	[data-level] {
 		display: block;

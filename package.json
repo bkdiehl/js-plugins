@@ -19,6 +19,7 @@
     "postcss": "^6.0.22",
     "rollup-plugin-babel": "^3.0.4",
     "rollup-plugin-collect-sass": "^1.0.9",
+    "rollup-plugin-commonjs": "^9.1.3",
     "rollup-plugin-livereload": "^0.6.0",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-sass": "^0.6.1",

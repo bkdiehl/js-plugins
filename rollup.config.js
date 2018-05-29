@@ -6,6 +6,7 @@ import autoprefixer from 'autoprefixer';
 import postcss from 'postcss';
 import livereload from 'rollup-plugin-livereload';
 import serve from 'rollup-plugin-serve';
+import commonjs from 'rollup-plugin-commonjs';
 
 const input = [
 	'src/accordion.js', 
@@ -26,6 +27,7 @@ export default {
 		livereload({
 			watch: 'dist'
 		}),
+		commonjs(),
 		resolve(),
 		babel(),
 		sass({
